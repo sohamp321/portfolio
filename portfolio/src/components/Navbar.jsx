@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import Homepage from './Homepage'
+import Mywork from './Mywork'
+import ContactForm from './ContactForm'
+import Resume from './Resume';
+
 
 function Navbar() {
 
@@ -14,12 +18,12 @@ function Navbar() {
         return <Homepage/>;
   
       case 1:
-        return <div>CASE1</div>;
+        return <Mywork/>;
   
       case 2:
-        return <div>CASE2</div>;
+        return <Resume/>;
       case 3:
-        return <div>CASE3</div>;
+        return <ContactForm/>;
   
       default:
         return <div>DEFAULT</div>;
@@ -31,6 +35,10 @@ function Navbar() {
 
   return (
     <div className="navbar">
+      <div class="left-nav">
+          <img src='/images/profile.png' class="profile-nav"/>
+          <p>Soham Parikh</p>
+        </div>
       <button onClick = {() => {handleTabChange(0)}} className={active === 0 ? 'active-nav-option' : 'nav-option'}>About Me</button>
       <button onClick = {() => {handleTabChange(1)}} className={active === 1 ? 'active-nav-option' : 'nav-option'}>My Works</button>
       <button onClick = {() => {handleTabChange(2)}} className={active === 2 ? 'active-nav-option' : 'nav-option'}>Resume</button>
